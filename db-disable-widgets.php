@@ -50,8 +50,8 @@ class db_disable_widgets {
     public function ddw_core_add_pages() {
 
         add_menu_page(
-            __('Disable Widgets', 'bitsch'),
-            __('Disable Widgets', 'bitsch'),
+            __('Disable Widgets', 'db-disable-widgets'),
+            __('Disable Widgets', 'db-disable-widgets'),
             'manage_options',
             'disable-widgets',
             array( $this, 'init_disable_widgets' )
@@ -62,7 +62,7 @@ class db_disable_widgets {
         ?>
         <p>
             <input type="checkbox" class="checkbox" name="<?php echo $widget->get_field_name('enabled'); ?>" id="<?php echo $widget->get_field_name('enabled'); ?>" <?= (!empty($instance['enabled']) || !isset($instance['enabled']) ? 'checked' : '') ?> />
-            <label for="<?php echo $widget->get_field_name('enabled'); ?>"><?= __('Enabled', 'bitsch') ?></label>
+            <label for="<?php echo $widget->get_field_name('enabled'); ?>"><?= __('Enabled', 'db-disable-widgets') ?></label>
         </p>
         <?php
     }
@@ -81,7 +81,7 @@ class db_disable_widgets {
      */
     function ddw_load_translation_file() {
         $plugin_path = dirname( plugin_basename( __FILE__ ) ) . '/languages/';
-        load_plugin_textdomain( 'bitsch', false, $plugin_path );
+        load_plugin_textdomain( 'db-disable-widgets', false, $plugin_path );
     }
 }
 new db_disable_widgets();
